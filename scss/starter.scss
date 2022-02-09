@@ -30,9 +30,11 @@ $enable-shadows: true;
 
 // Customize some defaults
 $body-color: #333;
-$body-bg: #fff;
+$body-bg: #FEFEFA;
 $border-radius: .4rem;
 $success: #7952b3;
+$black: #333;
+$hero-footer: 314px;
 
 @import "bootstrap/scss/functions"; // Required
 @import "bootstrap/scss/variables"; // Required
@@ -80,11 +82,415 @@ $success: #7952b3;
 
 @import "icon-list";
 
-body {
-  padding: 3rem 1.5rem;
+@font-face {
+  font-family: haas-55;
+  src: url(/assets/fonts/NHaasGroteskTXPro-55Rg.ttf);
 }
+
+@font-face {
+  font-family: haas-65;
+  src: url(/assets/fonts/NHaasGroteskTXPro-65Md.ttf);
+}
+
+@font-face {
+  font-family: haas-75;
+  src: url(/assets/fonts/NHaasGroteskTXPro-75Bd.ttf);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  /*padding: 3rem 1.5rem;*/
+  font-family: haas, Arial;
+
+}
+
+a{
+  color: $black;
+}
+
+a:hover{
+    color: $black;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 2em;
+}
+
+
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+  text-indent: -5px;
+}
+ul.dashed > li:before {
+  content: "- " ;
+  text-indent: -5px;
+}
+
+.mega-header{
+  font-family: haas-75;
+  font-size: 8em;
+  padding-top: 1em;
+}
+
 
 // Style Bootstrap icons
 .bi {
   fill: currentColor;
 }
+
+header h1{
+  margin-top:  0.5rem;
+  margin-bottom:  0.5rem;
+}
+
+.header-menu-item{
+  font-family: haas-65;
+  display: flex;
+  min-height: 42px;
+  text-align: center;
+}
+
+.header-menu-item h1{
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.header-menu-item a{
+  align-self: center;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.print:hover{
+  background-color: $black;
+  cursor: pointer;
+  color: $white;
+}
+
+.print a:hover{
+  color: $white;
+  text-decoration: none;
+}
+
+
+.border-top{
+  border-top: 1px solid $black!important;
+}
+
+.border-bottom{
+  border-bottom: 1px solid $black !important;
+}
+
+.border-right{
+  border-right: 1px solid $black !important;
+}
+
+.border-left{
+  border-left: 1px solid $black !important;
+}
+
+.no-padding{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.no-padding-top{
+  padding-top: 0px;
+}
+
+.section-header{
+  min-height: 107px;
+  padding-top: 1.4rem;
+  font-family: haas-65;
+  display: flex;
+}
+
+.section-header h2{
+  align-self: flex-end;
+}
+
+.section{
+  width: 100%;
+  font-size: 0.8em;
+  overflow: hidden;
+  border-top: 1px solid #000000;
+  padding: 0.2rem 0 0.2rem 0;
+}
+
+.title{
+  width: 30%;
+  float: left;
+}
+
+.info{
+  width: 70%;
+  float: left;
+}
+
+.media-button{
+  padding-top: calc(26px - 0.2em);
+}
+
+.btn-black {
+  color:$body-bg;
+  background: $black;
+  border-radius: 0px;
+}
+
+.btn-black:hover{
+  background: $body-bg;
+  border-radius: 0px;
+  border:  1px solid $black;
+}
+
+.contact-section{
+  padding: 1.4rem;
+  display: flex;
+}
+
+.icon{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  float: left;
+  align-self: center;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.contact-link h2{
+float: left;
+align-self: center;
+}
+
+#linkedin{
+  background-image: url(/assets/images/linkedin.png);
+}
+
+#mail{
+  background-image: url(/assets/images/mail.png);
+}
+
+/**Hero 3**/
+
+.hero-wrapper{
+  min-height: 400px;
+}
+
+.squares{
+  position: relative;
+}
+
+.square-row{
+  height: 100%;
+  height: calc(50vh - 119px/2);
+}
+
+.squares-profile{
+    position: absolute;
+    left: calc(50% - 140px);
+    top: calc(50% - 140px);
+    z-index: 1;
+}
+
+
+
+/**Hero 2**/
+
+.hero{
+  display: flex;
+}
+
+.hero-element{
+  align-self: center;
+}
+
+.hero-wrapper{
+  display: flex;
+  height: calc(100vh - 314px);
+  min-height: 400px;
+}
+
+.hero-container{
+  align-self: center;
+}
+
+.profile{
+  background: #ffffff;
+  width: 280px;
+  height: 280px;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-image: url(/assets/images/profile.png);
+  border-radius: 50%;
+  border: 1px solid $black;
+}
+
+.profile-image{
+
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-image: url(/assets/images/profile.png);
+}
+
+.circle{
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -5px;
+}
+
+#circle1{
+  width: 320px;
+  height: 320px;
+  margin-top: -20px;
+}
+
+#circle2{
+  width: 360px;
+  height: 360px;
+  margin-top: -40px;
+}
+
+#circle3{
+  width: 400px;
+  height: 400px;
+  margin-top: -60px;
+}
+
+#circle4{
+  width: 440px;
+  height: 440px;
+  margin-top: -80px;
+}
+
+@media only screen and (max-width: 992px) { 
+
+
+  .justify-content-end {
+    justify-content: space-between !important;
+    border-top: 1px solid $black;
+  }
+
+  .header-menu-item h1{
+    font-size: 3rem;
+  }
+
+  .mega-header{
+    font-size: 6em;
+  }
+
+  .border-right{
+    border-right: 1px solid $white !important;
+  }
+
+  .hero-wrapper {
+    height: calc(100vh - 260px);
+  }
+
+
+  .hero{
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .profile{
+    margin:  0 auto;
+  }
+
+  .circle{
+  }
+
+  #circle1{
+    width: 320px;
+    height: 320px;
+    margin-top: -35px;
+    left: calc(50% - 155px);
+  }
+
+  #circle2{
+    width: 360px;
+    height: 360px;
+    margin-top: -75px;
+    left: calc(50% - 175px);
+  }
+
+  #circle3{
+    width: 400px;
+    height: 400px;
+    margin-top: -115px;
+    left: calc(50% - 195px);
+  }
+
+  #circle4{
+    width: 440px;
+    height: 440px;
+    margin-top: -155px;
+    display: none;
+    left: calc(50% - 215px);
+  }
+
+  .hero-circles{
+    padding-top: 75px;
+  }
+
+
+}
+
+
+@media only screen and (max-width:576px) { 
+
+  .mega-header{
+    font-size: 4rem;
+  }
+
+  h2{
+    font-size: 1.2rem;
+  }
+
+  .profile{
+    width: 200px;
+    height: 200px;
+  }
+
+  .print{
+  }
+
+  .menu{
+    background-color: $black;
+  }
+
+  .header-menu-item a {
+    color: $white;
+  }
+
+  .hero-wrapper {
+    height: calc(100vh - 380px);
+  }
+
+  .circle{
+    display: none;
+  }
+
+  
+}
+
+
+
+
+
